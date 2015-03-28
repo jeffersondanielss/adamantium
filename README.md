@@ -1,7 +1,7 @@
 # adamantium
 A Adamantium structure for front-end developers
 
-# generator-adamantium [![Build Status](https://secure.travis-ci.org/jeffersondanielss/generator-adamantium.png?branch=master)](https://travis-ci.org/jeffersondanielss/generator-adamantium)
+# generator-adamantium [![Build Status](https://secure.travis-ci.org/DRYC/adamantium.png?branch=master)](https://travis-ci.org/DRYC/adamantium)
 
 ## Getting Started
 
