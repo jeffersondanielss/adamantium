@@ -1,10 +1,10 @@
 {
-  "name": "generator-adamantium",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "name": "adamantium",
+  "version": "0.0.1",
+  "description": "A Adamantium structure for front-end developers",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "jeffersondanielss/generator-adamantium",
+  "repository": "https://github.com/DRYC/adamantium.git",
   "author": {
     "name": "Jefferson Daniel",
     "email": "jeffersondaniels@hotmail.com",

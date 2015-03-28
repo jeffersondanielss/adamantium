@@ -1,6 +1,8 @@
 {
   "name": "package",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "modernizr": "~2.8.2",
+    "jquery": "~2.1.3"
+  }
 }
-

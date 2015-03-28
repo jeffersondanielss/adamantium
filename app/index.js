@@ -60,10 +60,13 @@ module.exports = yeoman.generators.Base.extend({
       this.copy("styles/_normalize.scss", "app/assets/styles/core/_normalize.scss");
       this.copy("styles/_normalize.scss", "app/assets/styles/core/_normalize.scss");
       this.copy("styles/_variables.scss", "app/assets/styles/core/_variables.scss");
+      this.copy("styles/_main.scss", "app/assets/styles/main.scss");
       this.copy("scripts/_main.js", "app/assets/scripts/main.js");
+
       this.copy("_gruntfile.js", "Gruntfile.js");
       this.copy("editorconfig", ".editorconfig");     
       this.copy("jshintrc", ".jshintrc");
+      this.copy("_gitignore", ".gitignore");
     }
   },
 
