@@ -16,22 +16,17 @@ module.exports = yeoman.generators.Base.extend({
       'A ' + chalk.blue('Adamantium') + ' structure for front-end developers!'
     ));
 
-    var prompts = [
-
-    {
+    var prompts = [{
       type: 'confirm',
       name: 'gruntbake',
       message: chalk.green('->') + ' Would you like to install grunt-bake?',
       default: false
-    }
-    ,{
+    },{
       type: 'confirm',
       name: 'jqueryvalidate',
       message: chalk.green('->') + ' and the jquery-validate?',
       default: false
-    }
-
-    ];
+    }];
 
     this.prompt(prompts, function (props) {
       this.gruntbake = props.gruntbake;
