@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'fontName';
+    src: url('fontDirectory/fontName.eot');
+    src: url('fontDirectory/fontName.eot') format('embedded-opentype'),
+         url('fontDirectory/fontName.woff2') format('woff2'),
+         url('fontDirectory/fontName.woff') format('woff'),
+         url('fontDirectory/fontName.ttf') format('truetype'),
+         url('fontDirectory/fontName.svg#TitilliumWebBlack') format('svg');
+}

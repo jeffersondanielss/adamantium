@@ -13,35 +13,45 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'A ' + chalk.red('Adamantium structure') + ' for front-end developers!'
+      'A ' + chalk.blue('Adamantium') + ' structure for front-end developers!'
     ));
 
-    var prompts = [{
+    var prompts = [
+
+    {
       type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+      name: 'gruntbake',
+      message: chalk.green('->') + ' Would you like to install grunt-bake?',
+      default: false
+    }
+    ,{
+      type: 'confirm',
+      name: 'jqueryvalidate',
+      message: chalk.green('->') + ' and the jquery-validate?',
+      default: false
+    }
+
+    ];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.gruntbake = props.gruntbake;
+      this.jqueryvalidate = props.jqueryvalidate;
+
+      if(props.gruntbake) {
+        this.log('Instala grunt-bake');
+        this.npmInstall(['grunt-bake'], { 'saveDev': true });
+      }
+
+      if(props.jqueryvalidate) {
+        this.log('Instala jquery-validate');
+        this.bowerInstall('jquery-validate --save-dev');
+      }
 
       done();
     }.bind(this));
   },
 
   writing: {
-    app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
-    },
-
     scaffoldFolders: function(){
       this.mkdir('app');
       this.mkdir('app/assets');
@@ -58,11 +68,13 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('styles/_patterns.scss', 'app/assets/styles/patterns/_patterns.scss');
       this.copy('styles/_core.scss', 'app/assets/styles/core/_core.scss');
       this.copy('styles/_normalize.scss', 'app/assets/styles/core/_normalize.scss');
-      this.copy('styles/_normalize.scss', 'app/assets/styles/core/_normalize.scss');
+      this.copy('styles/_fonts.scss', 'app/assets/styles/core/_fonts.scss');
       this.copy('styles/_variables.scss', 'app/assets/styles/core/_variables.scss');
       this.copy('styles/_main.scss', 'app/assets/styles/main.scss');
       this.copy('scripts/_main.js', 'app/assets/scripts/main.js');
 
+      this.copy('_package.json', 'package.json');
+      this.copy('_bower.json', 'bower.json');
       this.copy('_gruntfile.js', 'Gruntfile.js');
       this.copy('editorconfig', '.editorconfig');
       this.copy('jshintrc', '.jshintrc');

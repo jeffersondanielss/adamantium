@@ -15,7 +15,7 @@ npm install -g yo
 To install adamantium generator from npm, run:
 
 ```bash
-npm install -g generator-adamantium
+npm install -g adamantium
 ```
 
 Finally, initiate the generator:
