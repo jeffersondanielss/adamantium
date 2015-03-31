@@ -29,10 +29,10 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
-      // bake: {
-    	// 	files: [ '<%= path.app %>/develop/**', '<%= path.app %>/content.json'  ],
-    	// 	tasks: 'bake:build'
-  	  // },
+      bake: {
+    		files: [ '<%= path.app %>/develop/**', '<%= path.app %>/content.json'  ],
+    		tasks: 'bake:build'
+  	  },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -187,18 +187,6 @@ module.exports = function (grunt) {
       css: ['<%= path.dist %>/assets/styles/{,*/}*.css']
     },
 
-    // The following *-min tasks produce minified files in the dist folder
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= path.app %>/assets/images',
-          src: '{,*/}*.{gif,jpeg,jpg,png}',
-          dest: '<%= path.dist %>/assets/images'
-        }]
-      }
-    },
-
     svgmin: {
       dist: {
         files: [{
@@ -271,17 +259,18 @@ module.exports = function (grunt) {
       }
     },
 
-    // bake: {
-  	//   build: {
-  	// 	options: {
-  	// 		basePath: '<%= path.app %>/',
-  	// 		content: 'app/content.json'
-  	// 	},
-  	// 	files: {
-  	// 		'<%= path.app %>/index.html': '<%= path.app %>/develop/index.dev.html'
-  	// 	}
-  	//   },
-  	// },
+    bake: {
+  	  build: {
+  		options: {
+  			basePath: '<%= path.app %>/',
+  			content: 'app/content.json'
+  		},
+  		files: {
+        // example
+  			// '<%= path.app %>/index.html': '<%= path.app %>/develop/index.dev.html'
+  		}
+  	  },
+  	},
 
     // Run some tasks in parallel to speed up build process
     concurrent: {
@@ -297,7 +286,6 @@ module.exports = function (grunt) {
       dist: [
         'sass',
         'copy:styles',
-        'imagemin',
         'svgmin'
         ]
       }
@@ -313,6 +301,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'bake:build',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -341,6 +330,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bake:build',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

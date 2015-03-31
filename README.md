@@ -27,3 +27,5 @@ yo adamantium
 ## License
 
 MIT
+
+##### [Usage](https://github.com/DRYC/adamantium/blob/master/usage/usage-en.md)

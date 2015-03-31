@@ -33,7 +33,6 @@ module.exports = yeoman.generators.Base.extend({
       this.jqueryvalidate = props.jqueryvalidate;
 
       if(props.gruntbake) {
-        this.log('grunt-bake settings are ready however commented on Gruntfile.');
         this.npmInstall(['grunt-bake'], { 'saveDev': true });
       }
 
