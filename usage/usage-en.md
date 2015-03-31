@@ -46,7 +46,7 @@ it works for the css:
 ```sh
 // app/assets/styles/file-1.scss and app/assets/styles/file-2.scss
 
-  <!-- build:js({app,.tmp}) assets/styles/other-application.css -->
+  <!-- build:css(.tmp) assets/styles/other-application.css -->
     <script scr="file-1.css"></script>
     <script scr="file-2.css"></script>
   <!-- endbuild -->
