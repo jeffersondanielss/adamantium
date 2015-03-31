@@ -29,6 +29,10 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
+      // bake: {
+    	// 	files: [ '<%= path.app %>/develop/**', '<%= path.app %>/content.json'  ],
+    	// 	tasks: 'bake:build'
+  	  // },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -266,6 +270,18 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
+
+    // bake: {
+  	//   build: {
+  	// 	options: {
+  	// 		basePath: '<%= path.app %>/',
+  	// 		content: 'app/content.json'
+  	// 	},
+  	// 	files: {
+  	// 		'<%= path.app %>/index.html': '<%= path.app %>/develop/index.dev.html'
+  	// 	}
+  	//   },
+  	// },
 
     // Run some tasks in parallel to speed up build process
     concurrent: {

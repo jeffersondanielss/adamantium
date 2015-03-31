@@ -33,12 +33,11 @@ module.exports = yeoman.generators.Base.extend({
       this.jqueryvalidate = props.jqueryvalidate;
 
       if(props.gruntbake) {
-        this.log('Instala grunt-bake');
+        this.log('grunt-bake settings are ready however commented on Gruntfile.');
         this.npmInstall(['grunt-bake'], { 'saveDev': true });
       }
 
       if(props.jqueryvalidate) {
-        this.log('Instala jquery-validate');
         this.bowerInstall('jquery-validate --save-dev');
       }
 
@@ -49,6 +48,7 @@ module.exports = yeoman.generators.Base.extend({
   writing: {
     scaffoldFolders: function(){
       this.mkdir('app');
+      this.mkdir('app/develop');
       this.mkdir('app/assets');
       this.mkdir('app/assets/scripts');
       this.mkdir('app/assets/styles');
@@ -59,6 +59,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     projectfiles: function(){
+      this.copy('_content.json', 'app/content.json');
       this.copy('_index.html', 'app/index.html');
       this.copy('styles/_patterns.scss', 'app/assets/styles/patterns/_patterns.scss');
       this.copy('styles/_core.scss', 'app/assets/styles/core/_core.scss');
