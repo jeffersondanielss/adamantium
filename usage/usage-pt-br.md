@@ -66,5 +66,11 @@ seletor: 0.5s linear;
 ####jshint
 JSHint é uma ferramenta voltada para a comunidade para detectar erros e potenciais problemas no código JavaScript. É muito flexível para que você possa facilmente ajustá-lo às suas diretrizes de codificação específicas e do ambiente que você espera que o seu código para executar.
 
+#### PageSpeed insights
+Antes de executar isto procure no Gruntfile.js por __options__ em __pagespeed__ e altere __yoursite.com__ por sua url, e logo em seguida ainda na task pagespeed em __paths__ insira paginas internas do seu site se necessário, como __sobre__, __contaco__, etc.
+```sh
+$ grunt psi
+```
+
 ### Versão
 0.0.7
