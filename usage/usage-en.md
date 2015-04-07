@@ -75,6 +75,9 @@ Before performing this search in Gruntfile.js by options in PageSpeed and change
 $ grunt psi
 ```
 
+#### livereload
+The task is configured to be accessed by any device via wifi, all you need to do is find out the IP of your computer where you are generating your server. To find your IP type  __ifconfig__ (OS X) ou __ipconfig__ (Windows) on your terminal. To access your cell phone for example just use your ip over the port that is configured in Gruntfile.js (the default port is 9000). Ex: x.x.x.x:9000.
+
 ### Version
 0.0.7
 

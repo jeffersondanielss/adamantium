@@ -1,6 +1,6 @@
 {
   "name": "generator-adamantium",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A Adamantium structure for front-end developers",
   "license": "MIT",
   "main": "app/index.js",

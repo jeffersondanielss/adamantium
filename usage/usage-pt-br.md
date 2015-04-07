@@ -72,5 +72,8 @@ Antes de executar isto procure no Gruntfile.js por __options__ em __pagespeed__ 
 $ grunt psi
 ```
 
+#### livereload
+A task está configurada para ser acessada por qualquer dispositivo via wifi, tudo que você precisa fazer é descobrir o IP do seu computador onde você está gerando seu servidor. Para descobrir seu IP digite  __ifconfig__ (OS X) ou __ipconfig__ (Windows) no seu terminal. Para acessar de seu ceulular por exemplo basta usar seu ip mais a porta que está configurada no Gruntfile.js (a porta padrão é 9000). Ex: x.x.x.x:9000.
+
 ### Versão
 0.0.7
