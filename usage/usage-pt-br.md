@@ -66,5 +66,14 @@ seletor: 0.5s linear;
 ####jshint
 JSHint é uma ferramenta voltada para a comunidade para detectar erros e potenciais problemas no código JavaScript. É muito flexível para que você possa facilmente ajustá-lo às suas diretrizes de codificação específicas e do ambiente que você espera que o seu código para executar.
 
+#### PageSpeed insights
+Antes de executar isto procure no Gruntfile.js por __options__ em __pagespeed__ e altere __yoursite.com__ por sua url, e logo em seguida ainda na task pagespeed em __paths__ insira paginas internas do seu site se necessário, como __sobre__, __contaco__, etc.
+```sh
+$ grunt psi
+```
+
+#### livereload
+A task está configurada para ser acessada por qualquer dispositivo via wifi, tudo que você precisa fazer é descobrir o IP do seu computador onde você está gerando seu servidor. Para descobrir seu IP digite  __ifconfig__ (OS X) ou __ipconfig__ (Windows) no seu terminal. Para acessar de seu ceulular por exemplo basta usar seu ip mais a porta que está configurada no Gruntfile.js (a porta padrão é 9000). Ex: x.x.x.x:9000.
+
 ### Versão
 0.0.7

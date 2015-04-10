@@ -297,6 +297,29 @@ module.exports = function (grunt) {
       }
     },
 
+    pagespeed: {
+      options: {
+        nokey: true,
+        url: 'http://yoursite.com'
+      },
+      prod: {
+        options: {
+          url: 'http://yoursite.com',
+          locale: 'en_GB',
+          strategy: 'desktop',
+          threshold: 80
+        }
+      },
+      paths: {
+        options: {
+          paths: ['/download', '/documentation', '/about'],
+          locale: 'en_GB',
+          strategy: 'desktop',
+          threshold: 80
+        }
+      }
+    },
+
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
@@ -364,9 +387,10 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'usemin',
-    // 'htmlmin',
+    'htmlmin',
   ]);
 
   grunt.registerTask('psi', [ 'pagespeed' ]);
 
 };
+
