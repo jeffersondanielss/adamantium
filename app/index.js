@@ -33,7 +33,7 @@ module.exports = yeoman.generators.Base.extend({
       this.jqueryvalidate = props.jqueryvalidate;
 
       if(props.almond) {
-        this.npmInstall(['almond'], { 'saveDev': true });
+        this.bowerInstall('almond --save-dev');
       }
 
       if(props.jqueryvalidate) {
