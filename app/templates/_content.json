@@ -1,0 +1,9 @@
+{
+  "config": {
+     "title": "your site"
+    ,"description": "Here description of your site"
+    ,"base-url": "localhost:9000/"
+    ,"image-path": "assets/images"
+    ,"script-path": "assets/scripts"
+  }
+}

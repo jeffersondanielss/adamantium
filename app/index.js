@@ -18,8 +18,8 @@ module.exports = yeoman.generators.Base.extend({
 
     var prompts = [{
       type: 'confirm',
-      name: 'gruntbake',
-      message: chalk.green('->') + ' Would you like to install grunt-bake?',
+      name: 'almond',
+      message: chalk.green('->') + ' Would you like to install almond?',
       default: false
     },{
       type: 'confirm',
@@ -29,11 +29,11 @@ module.exports = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function (props) {
-      this.gruntbake = props.gruntbake;
+      this.almond = props.almond;
       this.jqueryvalidate = props.jqueryvalidate;
 
-      if(props.gruntbake) {
-        this.npmInstall(['grunt-bake'], { 'saveDev': true });
+      if(props.almond) {
+        this.npmInstall(['almond'], { 'saveDev': true });
       }
 
       if(props.jqueryvalidate) {
@@ -48,6 +48,7 @@ module.exports = yeoman.generators.Base.extend({
     scaffoldFolders: function(){
       this.mkdir('app');
       this.mkdir('app/develop');
+      this.mkdir('app/develop/includes');
       this.mkdir('app/assets');
       this.mkdir('app/assets/scripts');
       this.mkdir('app/assets/styles');
@@ -67,6 +68,9 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('styles/_variables.scss', 'app/assets/styles/core/_variables.scss');
       this.copy('styles/_main.scss', 'app/assets/styles/main.scss');
       this.copy('scripts/_main.js', 'app/assets/scripts/main.js');
+      this.copy('_footer.html', 'app/develop/includes/footer.html');
+      this.copy('_head.html', 'app/develop/includes/head.html');
+      this.copy('_index.dev.html', 'app/develop/index.dev.html');
 
       this.copy('_package.json', 'package.json');
       this.copy('_bower.json', 'bower.json');

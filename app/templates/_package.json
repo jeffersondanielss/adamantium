@@ -13,6 +13,7 @@
 
   "devDependencies": {
     "grunt-autoprefixer": "^2.2.0",
+    "grunt-bake": "^0.3.12",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.1",

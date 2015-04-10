@@ -30,9 +30,9 @@ module.exports = function (grunt) {
         }
       },
       bake: {
-    		files: [ '<%= path.app %>/develop/**', '<%= path.app %>/content.json'  ],
-    		tasks: 'bake:build'
-  	  },
+        files: [ '<%= path.app %>/develop/**', '<%= path.app %>/content.json'  ],
+        tasks: 'bake:build'
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -59,11 +59,13 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
+        livereload: true,
+        hostname: '*',
+        open: {
+          target: 'http://127.0.0.1:9000'
+        },
         port: 9000,
-        open: true,
-        livereload: 35729,
-        // Change this to '0.0.0.0' to access the server from outside
-        hostname: 'localhost'
+        useAvailablePort: true
       },
       livereload: {
         options: {
@@ -244,9 +246,10 @@ module.exports = function (grunt) {
           dest: '<%= path.dist %>',
           src: [
             '*.{ico,png,txt}',
-            'images/{,*/}*.webp',
+            'assets/images/{,*/}*.*',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'assets/fonts/{,*/}*.*',
+            '!develop/**.*'
           ]
         }]
       },
@@ -260,17 +263,39 @@ module.exports = function (grunt) {
     },
 
     bake: {
-  	  build: {
-  		options: {
-  			basePath: '<%= path.app %>/',
-  			content: 'app/content.json'
-  		},
-  		files: {
-        // example
-  			// '<%= path.app %>/index.html': '<%= path.app %>/develop/index.dev.html'
-  		}
-  	  },
-  	},
+      build: {
+      options: {
+        basePath: '<%= path.app %>/',
+        content: '<%= path.app %>/content.json'
+      },
+      files: {
+        '<%= path.app %>/index.html': '<%= path.app %>/develop/index.dev.html'
+      }
+      },
+    },
+
+    pagespeed: {
+      options: {
+        nokey: true,
+        url: 'http://yoursite.com'
+      },
+      prod: {
+        options: {
+          url: 'http://yoursite.com',
+          locale: 'en_GB',
+          strategy: 'desktop',
+          threshold: 80
+        }
+      },
+      paths: {
+        options: {
+          paths: ['/download', '/documentation', '/about'],
+          locale: 'en_GB',
+          strategy: 'desktop',
+          threshold: 80
+        }
+      }
+    },
 
     // Run some tasks in parallel to speed up build process
     concurrent: {
@@ -339,6 +364,9 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'usemin',
-    'htmlmin',
+    // 'htmlmin',
   ]);
+
+  grunt.registerTask('psi', [ 'pagespeed' ]);
+
 };
