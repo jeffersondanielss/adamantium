@@ -1,4 +1,6 @@
-# Adamantium [![Code Climate](https://codeclimate.com/github/DRYC/adamantium/badges/gpa.svg)](https://codeclimate.com/github/DRYC/adamantium) [![Test Coverage](https://codeclimate.com/github/DRYC/adamantium/badges/coverage.svg)](https://codeclimate.com/github/DRYC/adamantium) [![Build Status](https://secure.travis-ci.org/DRYC/adamantium.png?branch=master)](https://travis-ci.org/DRYC/adamantium)
+# Adamantium
+[![Code Climate](https://codeclimate.com/github/jeffersondanielss/adamantium/badges/gpa.svg)](https://codeclimate.com/github/jeffersondanielss/adamantium) [![Test Coverage](https://codeclimate.com/github/jeffersondanielss/adamantium/badges/coverage.svg)](https://codeclimate.com/github/jeffersondanielss/adamantium/coverage) [![Issue Count](https://codeclimate.com/github/jeffersondanielss/adamantium/badges/issue_count.svg)](https://codeclimate.com/github/jeffersondanielss/adamantium) [![Build Status](https://secure.travis-ci.org/jeffersondanielss/adamantium.png?branch=master)](https://travis-ci.org/DRYC/adamantium)
+
 A Adamantium structure for front-end developers
 # Getting Started
 

@@ -4,7 +4,7 @@
   "description": "A Adamantium structure for front-end developers",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "https://github.com/DRYC/adamantium.git",
+  "repository": "https://github.com/jeffersondanielss/adamantium.git",
   "author": {
     "name": "Jefferson Daniel",
     "email": "jeffersondaniels@hotmail.com",
